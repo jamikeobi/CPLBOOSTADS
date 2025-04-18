@@ -1,0 +1,20 @@
+.logo-area {
+    font-family: 'Montserrat', sans-serif; /* or any sleek font like Poppins, Roboto */
+    font-weight: 800;
+    font-size: 28px;
+    color: #1F1F25;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    text-decoration: none;
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 8px;
+    color: #ACA0F5;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .logo-area:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+  }
+  
