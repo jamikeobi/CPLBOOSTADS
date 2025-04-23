@@ -17,6 +17,14 @@ import { RetargetingComponent } from './pages/solutions/retargeting/retargeting.
 import { FaqComponent } from './pages/about/faq/faq.component';
 import { BlogComponent } from './pages/about/blog/blog.component';
 import { ContactComponent } from './pages/contact/contact.component';
+import { CounterComponent } from './pages/advertisers/counter/counter.component';
+import { PubCounterComponent } from './pages/publishers/pub-counter/pub-counter.component';
+import { IndentifyCounterComponent } from './pages/solutions/identify-optimize/indentify-counter/indentify-counter.component';
+import { MonetizeCounterComponent } from './pages/solutions/monetization/monetize-counter/monetize-counter.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { DashboardComponent } from './pages/contact/dashboard/dashboard.component';
+
 
 @NgModule({
   declarations: [
@@ -34,11 +42,18 @@ import { ContactComponent } from './pages/contact/contact.component';
     RetargetingComponent,
     FaqComponent,
     BlogComponent,
-    ContactComponent
+    ContactComponent,
+    CounterComponent,
+    PubCounterComponent,
+    IndentifyCounterComponent,
+    MonetizeCounterComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule, 
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

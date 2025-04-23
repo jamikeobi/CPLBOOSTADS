@@ -10,3 +10,158 @@
     transition: all 0.3s ease-in-out;
   }
   
+
+  /* Accordion button */
+  .custom-explore-btn {
+    background-color: #0d6efd; /* Bootstrap blue */
+    color: white;
+    font-weight: 600;
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s ease-in-out;
+  }
+
+/* When active (expanded), Bootstrap adds this class */
+.accordion-button:not(.collapsed) {
+  background-color: #E08CDE !important;
+  color: white !important;
+  box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+}
+
+.accordion-button:not(.collapsed) i {
+  color: white;
+}
+  
+  .custom-explore-btn i {
+    color: #000;
+    font-size: 2rem;
+    animation-duration: 1.5s;
+  }
+  
+  .custom-explore-btn:hover {
+    background-color: #084298;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+  }
+  
+
+  /* Slider */
+  .custom-swiper-nav {
+    width: 40px;
+    height: 40px;
+    background-color: #E08CDE;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 50%;
+    z-index: 10;
+    cursor: pointer;
+    transform: translateY(-50%);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+  }
+  
+  .swiper-button-prev {
+    left: 10px;
+  }
+  
+  .swiper-button-next {
+    right: 10px;
+  }
+  form{
+    align-self: center;
+    justify-content: center;
+  }
+
+  .rts-btn a:hover{
+    color: black;
+  }
+/* Marketing Strategy */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background-color: #E08CDE;
+  padding: 12px 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.logo:hover {
+  background-color: #000;
+  transform: translateY(-2px);
+}
+
+.logo .icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 18px;
+}
+
+.logo .header-testimonial {
+  font-weight: 600;
+  font-size: 16px;
+  color: #fff;
+  letter-spacing: 0.5px;
+}
+
+.single-testimonials-area .disc{
+  height: 70px !important;
+}
+
+
+/* Filter section */
+.tab-btn {
+  padding: 10px 25px;
+  width: fit-content;
+  border: none;
+  background-color: #f1f1f1;
+  color: #333;
+  border-radius: 30px;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.tab-btn:hover {
+  background-color: #e0e0e0;
+}
+
+.tab-btn.active {
+  background-color: #E08CDE;
+  color: #fff;
+  box-shadow: 0 0 0 3px rgba(77, 44, 145, 0.2);
+}
+
+.tab-box {
+  display: none;
+}
+
+.tab-box.active {
+  display: block;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

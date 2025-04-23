@@ -12,12 +12,13 @@ import { UserAcquisitionComponent } from './pages/solutions/user-acquisition/use
 import { FaqComponent } from './pages/about/faq/faq.component';
 import { BlogComponent } from './pages/about/blog/blog.component';
 import { ContactComponent } from './pages/contact/contact.component';
+import { DashboardComponent } from './pages/contact/dashboard/dashboard.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'home', component: HomeComponent},
   {path: 'advertiser', component: AdvertisersComponent},
-  {path: 'publishers', component: PublishersComponent},
+  {path: 'publisher', component: PublishersComponent},
 
   // Solutions sub links
   {path: 'solutions/anti-fraud', component: AntiFraudComponent},
@@ -33,6 +34,10 @@ const routes: Routes = [
 
   // Contact Us
   {path: 'contact', component: ContactComponent},
+
+
+  // Dashboard
+  {path: 'cockpit', component: DashboardComponent}
 
 ];
 

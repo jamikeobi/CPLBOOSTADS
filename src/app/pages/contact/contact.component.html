@@ -1,66 +1,81 @@
- <!-- contact banner area srart -->
- <div class="contact-banner-area-start rts-section-gap">
+<!-- contact banner area srart -->
+<div class="contact-banner-area-start rts-section-gap">
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
                 <!-- banner main inner contact areas start -->
                 <div class="banner-inner-area-contact-inner">
-                    <h1 class="title skew-up-2">Don’t hesitate to <br> <span> reach out</span></h1>
-                    <p class="disc">Amet tempor ornare a nunc mauris. Arcu dui ut ultrices nunc mattis vitae.
-                        Aliquam pulvinar libero iaculis iaculis nullam urna.</p>
+                    <h1 class="title skew-up-2"><span>Contact Us</span></h1>
                 </div>
                 <!-- banner main inner contact areas end -->
             </div>
         </div>
     </div>
     <div class="shape-area">
-        <img src="assets/images/product/shape/01.png" alt="" class="one">
-        <img src="assets/images/product/shape/02.png" alt="" class="two">
-        <img src="assets/images/product/shape/03.png" alt="" class="three">
-        <img src="assets/images/product/shape/04.png" alt="" class="four">
+        <img src="assets/images/product/shape/01.png" alt="" class="one" />
+        <img src="assets/images/product/shape/02.png" alt="" class="two" />
+        <img src="assets/images/product/shape/03.png" alt="" class="three" />
+        <img src="assets/images/product/shape/04.png" alt="" class="four" />
     </div>
 </div>
 <!-- contact banner area end -->
-
 
 <div class="rts-contact-form-area contact-form-page rts-section-gapBottom">
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                <form class="contact-form" action="mailer.php" method="post" id="contact-form">
-                    <!-- single inpout-area -->
+                <form [formGroup]="contactForm" (ngSubmit)="OnFormSubmit()" class="contact-form">
                     <div class="single-input-area">
                         <label for="name">Full name</label>
-                        <input id="name" name="name" type="text" placeholder="Your name" required>
+                        <input id="name" formControlName="name" type="text" placeholder="Your name" />
                         <i class="fa-regular fa-user"></i>
                     </div>
-                    <!-- single inpout-area end -->
-                    <!-- single inpout-area -->
+                    <div class="danger" *ngIf="name?.invalid && (name?.touched && submitted)">
+                        Name is required
+                    </div>
+
                     <div class="single-input-area">
                         <label for="email">Email address</label>
-                        <input id="email" name="email" type="text" placeholder="Your email" required>
+                        <input id="email" formControlName="email" type="text" placeholder="Your email" />
                         <i class="fa-regular fa-envelope"></i>
                     </div>
-                    <!-- single inpout-area end -->
-                    <!-- single inpout-area -->
+                    <div *ngIf="(submitted && email?.invalid) && email?.touched" class="text-danger small">
+                        <div>Email is required.</div>
+                    </div>
+
+                    <div class="single-input-area">
+                        <label for="company">Company (Optional)</label>
+                        <input id="company" formControlName="company" type="text" placeholder="Your company's name" />
+                        <i class="fa-regular fa-user"></i>
+                    </div>
+
+                    <div class="single-input-area">
+                        <label for="phoneNumber">Phone Number</label>
+                        <input id="phoneNumber" formControlName="phoneNumber" type="text"
+                            placeholder="Your phone number" />
+                        <i class="fa-regular fa-user"></i>
+                    </div>
+                    <div *ngIf="(submitted && phoneNumber?.invalid) && phoneNumber?.touched" class="text-danger small">
+                        Phone number is required and must be numeric.
+                    </div>
+
                     <div class="single-input-area text-area">
                         <label for="message">Your Message</label>
-                        <textarea id="message" name="message" placeholder="Your message"></textarea>
+                        <textarea id="message" formControlName="message" placeholder="Your message"></textarea>
                         <i class="fa-regular fa-message"></i>
                     </div>
-                    <!-- single inpout-area end -->
-                    <button type="submit" class="rts-btn btn-primary">Send message <i class="fa-solid fa-location-arrow"></i></button>
+                    <div *ngIf="(submitted && message?.invalid) && message?.touched" class="text-danger small">
+                        Message is required.
+                    </div>
 
-                    <!-- message send confirmation -->
-                    <div id="form-messages" class="text-center text-primary mt-5 text-capitalize"></div>
-                    <!-- message send confirmation end -->
+                    <button type="submit" class="rts-btn btn-primary">
+                        Send message <i class="fa-solid fa-location-arrow"></i>
+                    </button>
                 </form>
-
             </div>
         </div>
     </div>
 </div>
-
 
 <!-- rts single contact area start -->
 <div class="rts-contact-single-area rts-section-gap2Bottom pt--120">
@@ -70,10 +85,10 @@
                 <!-- single contact area start -->
                 <div class="single-contact-inner-info">
                     <div class="icon">
-                        <img src="assets/images/contact/01.svg" alt="service">
+                        <img src="assets/images/contact/01.svg" alt="service" />
                     </div>
                     <h5 class="title">Address</h5>
-                    <p>4140 Parker Rd. Allen, New Mexico 31134</p>
+                    <p>917a Hertfordshire Road Waltham cross En8 7rr</p>
                 </div>
                 <!-- single contact area end -->
             </div>
@@ -81,10 +96,10 @@
                 <!-- single contact area start -->
                 <div class="single-contact-inner-info mid">
                     <div class="icon">
-                        <img src="assets/images/contact/02.svg" alt="service">
+                        <img src="assets/images/contact/02.svg" alt="service" />
                     </div>
                     <h5 class="title">Email</h5>
-                    <p>sayhello&#64;fluxi.com</p>
+                    <p><a href="mailto:admin@cplboostads.com">admin&#64;cplboostads.com</a></p>
                 </div>
                 <!-- single contact area end -->
             </div>
@@ -92,10 +107,10 @@
                 <!-- single contact area start -->
                 <div class="single-contact-inner-info">
                     <div class="icon">
-                        <img src="assets/images/contact/03.svg" alt="service">
+                        <img src="assets/images/contact/03.svg" alt="service" />
                     </div>
                     <h5 class="title">Phone</h5>
-                    <p>+(239) 555-0108</p>
+                    <p><a href="tel:07413964527">07413964527</a></p>
                 </div>
                 <!-- single contact area end -->
             </div>
@@ -104,328 +119,21 @@
 </div>
 <!-- rts single contact area end -->
 
-
-<!-- faq call to action area start -->
-<div class="faq-cta-main-wrapper-bg rts-section-gap2">
-    <!-- rts faq section area start -->
-    <div class="rts-faq-area-full-container">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="faq-area-start">
-                        <div class="title-style-one-center">
-                            <span class="pre skew-up">Our FAQ</span>
-                            <h2 class="title skew-up">Got questions? We’ve got<br />answers</h2>
-                        </div>
-                    </div>
-                </div>
+<!-- Bootstrap Modal -->
+<div #feedbackModal class="modal fade" tabindex="-1" aria-labelledby="feedbackModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content text-center">
+            <div class="modal-header">
+                <h5 class="modal-title" id="feedbackModalLabel">
+                    {{ isSuccess ? "Success" : "Error" }}
+                </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div class="row mt--60">
-                <div class="col-lg-12">
-                    <div class="accordion-faq-area-border-bottom-style pb--100 style-four">
-                        <div class="accordion" id="accordionExamples">
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="headingOne">
-                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                        What are your core services as a UX design and branding firm?
-                                    </button>
-                                </h2>
-                                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExamples">
-                                    <div class="accordion-body">
-                                        <p class="disc">
-                                            However, our passion for branding and the demand from our clients led us to expand our offering to provide full-service brand design practice and web design and development of marketing websites.
-                                        </p>
-                                        <p class="disc">
-                                            Today, our projects encompass a wide range, from building new products and defining brands to revitalizing existing mobile apps, websites, and enterprise software. We specialize in crafting digital products that wholeheartedly embody the brand's personality and deliver delightful experiences to your customers.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="headingTwo">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                        Do you work with clients in different timezones?
-                                    </button>
-                                </h2>
-                                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExamples">
-                                    <div class="accordion-body">
-                                        <p class="disc">
-                                            However, our passion for branding and the demand from our clients led us to expand our offering to provide full-service brand design practice and web design and development of marketing websites.
-                                        </p>
-                                        <p class="disc">
-                                            Today, our projects encompass a wide range, from building new products and defining brands to revitalizing existing mobile apps, websites, and enterprise software. We specialize in crafting digital products that wholeheartedly embody the brand's personality and deliver delightful experiences to your customers.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="headingThree">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                        What separates you from other branding and web design agencies?
-                                    </button>
-                                </h2>
-                                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExamples">
-                                    <div class="accordion-body">
-                                        <p class="disc">
-                                            However, our passion for branding and the demand from our clients led us to expand our offering to provide full-service brand design practice and web design and development of marketing websites.
-                                        </p>
-                                        <p class="disc">
-                                            Today, our projects encompass a wide range, from building new products and defining brands to revitalizing existing mobile apps, websites, and enterprise software. We specialize in crafting digital products that wholeheartedly embody the brand's personality and deliver delightful experiences to your customers.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="headingFour">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                                        How much does hiring you for a design project cost?
-                                    </button>
-                                </h2>
-                                <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExamples">
-                                    <div class="accordion-body">
-                                        <p class="disc">
-                                            However, our passion for branding and the demand from our clients led us to expand our offering to provide full-service brand design practice and web design and development of marketing websites.
-                                        </p>
-                                        <p class="disc">
-                                            Today, our projects encompass a wide range, from building new products and defining brands to revitalizing existing mobile apps, websites, and enterprise software. We specialize in crafting digital products that wholeheartedly embody the brand's personality and deliver delightful experiences to your customers.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="headingFive">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-                                        Do you work with startups?
-                                    </button>
-                                </h2>
-                                <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#accordionExamples">
-                                    <div class="accordion-body">
-                                        <p class="disc">
-                                            However, our passion for branding and the demand from our clients led us to expand our offering to provide full-service brand design practice and web design and development of marketing websites.
-                                        </p>
-                                        <p class="disc">
-                                            Today, our projects encompass a wide range, from building new products and defining brands to revitalizing existing mobile apps, websites, and enterprise software. We specialize in crafting digital products that wholeheartedly embody the brand's personality and deliver delightful experiences to your customers.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="headingSix">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
-                                        Can you help us redesign our B2B/enterprise software?
-                                    </button>
-                                </h2>
-                                <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#accordionExamples">
-                                    <div class="accordion-body">
-                                        <p class="disc">
-                                            However, our passion for branding and the demand from our clients led us to expand our offering to provide full-service brand design practice and web design and development of marketing websites.
-                                        </p>
-                                        <p class="disc">
-                                            Today, our projects encompass a wide range, from building new products and defining brands to revitalizing existing mobile apps, websites, and enterprise software. We specialize in crafting digital products that wholeheartedly embody the brand's personality and deliver delightful experiences to your customers.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- rts faq section area end -->
-    <div class="shape-area">
-        <img src="assets/images/faq/shape/01.png" alt="" class="one">
-        <img src="assets/images/faq/shape/02.png" alt="" class="two">
-        <img src="assets/images/faq/shape/03.png" alt="" class="three">
-        <img src="assets/images/faq/shape/04.png" alt="" class="four">
-    </div>
-</div>
-<!-- faq call to action area end -->
-
-
-<!-- rts-testimonials-area start -->
-<div class="rts-testimonials-area-7 rts-section-gapBottom">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="title-style-one-center">
-                    <h2 class="title skew-up">Clients feedback</h2>
-                </div>
-            </div>
-        </div>
-        <div class="row mt--60">
-            <div class="col-lg-12">
-                <div class="swiper mySwiper-testimonials-7">
-                    <div class="swiper-wrapper pb--80">
-                        <div class="swiper-slide">
-                            <div class="single-testimonials-4">
-                                <div class="icon">
-                                    <img src="assets/images/testimonials/shape/05.png" alt="testimonials">
-                                </div>
-                                <p class="disc">
-                                    “I don’t see anyone else in this space providing the level of insight brings to the table. They understand data beyond the vanity metrics often provided – true impactful results.”
-                                </p>
-                                <div class="author">
-                                    <h6 class="title">Kevin Smith</h6>
-                                    <p>Merchandising Market Manager</p>
-                                    <img src="assets/images/testimonials/avatars/02.png" alt="testimonials">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="single-testimonials-4">
-                                <div class="icon">
-                                    <img src="assets/images/testimonials/shape/05.png" alt="testimonials">
-                                </div>
-                                <p class="disc">
-                                    “I don’t see anyone else in this space providing the level of insight brings to the table. They understand data beyond the vanity metrics often provided – true impactful results.”
-                                </p>
-                                <div class="author">
-                                    <h6 class="title">Smith Kavin</h6>
-                                    <p>Creative and Identity Partner</p>
-                                    <img src="assets/images/testimonials/avatars/03.png" alt="testimonials">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="single-testimonials-4">
-                                <div class="icon">
-                                    <img src="assets/images/testimonials/shape/05.png" alt="testimonials">
-                                </div>
-                                <p class="disc">
-                                    “I don’t see anyone else in this space providing the level of insight brings to the table. They understand data beyond the vanity metrics often provided – true impactful results.”
-                                </p>
-                                <div class="author">
-                                    <h6 class="title">John Lee</h6>
-                                    <p>Founder/CEO at Fluxi Digital</p>
-                                    <img src="assets/images/testimonials/avatars/01.png" alt="testimonials">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="single-testimonials-4">
-                                <div class="icon">
-                                    <img src="assets/images/testimonials/shape/05.png" alt="testimonials">
-                                </div>
-                                <p class="disc">
-                                    “I don’t see anyone else in this space providing the level of insight brings to the table. They understand data beyond the vanity metrics often provided – true impactful results.”
-                                </p>
-                                <div class="author">
-                                    <h6 class="title">Kevin Smith</h6>
-                                    <p>Merchandising Market Manager</p>
-                                    <img src="assets/images/testimonials/avatars/01.png" alt="testimonials">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="single-testimonials-4">
-                                <div class="icon">
-                                    <img src="assets/images/testimonials/shape/05.png" alt="testimonials">
-                                </div>
-                                <p class="disc">
-                                    “I don’t see anyone else in this space providing the level of insight brings to the table. They understand data beyond the vanity metrics often provided – true impactful results.”
-                                </p>
-                                <div class="author">
-                                    <h6 class="title">Kevin Smith</h6>
-                                    <p>Merchandising Market Manager</p>
-                                    <img src="assets/images/testimonials/avatars/01.png" alt="testimonials">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-pagination"></div>
-                </div>
+            <div class="modal-body">
+                <p [ngClass]="{ 'text-success': isSuccess, 'text-danger': !isSuccess }">
+                    {{ feedbackMessage }}
+                </p>
             </div>
         </div>
     </div>
 </div>
-<!-- rts-testimonials-area end -->
-
-
-<div class="rts-section-gap rts-blog-area-one style-seven about">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="title-style-one-center">
-                    <h2 class="title skew-up">Recent articles from blog</h2>
-                </div>
-            </div>
-        </div>
-        <div class="row g-48 mt--0 justify-content-sm-center justify-content-md-start">
-            <div class="col-lg-4 col-md-6 col-sm-10">
-                <!-- single blog area start -->
-                <div class="single-blog-area-style-one eight-area text-center">
-                    <a href="blog-details.html" class="thumbnail">
-                        <img src="assets/images/blog/01.png" alt="blog-image">
-                    </a>
-                    <div class="inner-content-wrapper">
-                        <div class="bottom-area mb--25">
-                            <span class="admin">Amir Nisi</span>
-                            <span class="date">•   25 October, 2025</span>
-                        </div>
-                        <a href="blog-details.html">
-                            <h6 class="title mb--20">
-                                Which tool seems the best for content writing strategy?
-                            </h6>
-                        </a>
-                        <a href="blog-details.html" class="btn-readmore-inner">Read more</a>
-                    </div>
-                </div>
-                <!-- single blog area end -->
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-10">
-                <!-- single blog area start -->
-                <div class="single-blog-area-style-one eight-area">
-                    <a href="blog-details.html" class="thumbnail">
-                        <img src="assets/images/blog/02.png" alt="blog-image">
-                    </a>
-                    <div class="inner-content-wrapper">
-                        <div class="bottom-area mb--25">
-                            <span class="admin">Amir Nisi</span>
-                            <span class="date">•   25 October, 2025</span>
-                        </div>
-                        <a href="blog-details.html">
-                            <h6 class="title mb--20">
-                                Getting eyeballs on what you write for a business is tricky
-                            </h6>
-                        </a>
-                        <a href="blog-details.html" class="btn-readmore-inner">Read more</a>
-                    </div>
-                </div>
-                <!-- single blog area end -->
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-10">
-                <!-- single blog area start -->
-                <div class="single-blog-area-style-one eight-area">
-                    <a href="blog-details.html" class="thumbnail">
-                        <img src="assets/images/blog/03.png" alt="blog-image">
-                    </a>
-                    <div class="inner-content-wrapper">
-                        <div class="bottom-area mb--25">
-                            <span class="admin">Amir Nisi</span>
-                            <span class="date">•   25 October, 2025</span>
-                        </div>
-                        <a href="blog-details.html">
-                            <h6 class="title mb--20">
-                                More than just buzzwords for marketing concepts of SEO
-                            </h6>
-                        </a>
-                        <a href="blog-details.html" class="btn-readmore-inner">Read more</a>
-                    </div>
-                </div>
-                <!-- single blog area end -->
-            </div>
-        </div>
-        <div class="row">
-            <div class="blog-btn-area mt--50">
-                <a href="blog.html" class="rts-btn btn-primary-4-border arrow-rotate inner m-auto">See More Posts <i class="fa-solid fa-arrow-right"></i></a>
-            </div>
-        </div>
-    </div>
-    <div class="shape-area">
-        <img src="assets/images/blog/shape/01.png" alt="marketing" class="one">
-        <img src="assets/images/blog/shape/02.png" alt="marketing" class="two">
-        <img src="assets/images/blog/shape/03.png" alt="marketing" class="three">
-    </div>
-</div>
-

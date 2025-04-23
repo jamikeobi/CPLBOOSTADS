@@ -1,0 +1,39 @@
+
+  /* Slider */
+  .custom-swiper-nav {
+    width: 40px;
+    height: 40px;
+    background-color: #E08CDE;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 50%;
+    z-index: 10;
+    cursor: pointer;
+    transform: translateY(-50%);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+  }
+  
+  .swiper-button-prev {
+    left: 10px;
+  }
+  
+  .swiper-button-next {
+    right: 10px;
+  }
+
+.single-service-style-two .disc{
+    height: 50px !important;
+}
+
+.service-page-service-style .disc{
+    height: 170px;
+}
+
+.service-page-service-style:hover{
+    background-color: #E08CDE !important;
+}
