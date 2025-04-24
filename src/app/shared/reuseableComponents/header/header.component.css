@@ -4,8 +4,8 @@
 }
 
 
-.logo-area {
-    font-family: 'Montserrat', sans-serif; /* or any sleek font like Poppins, Roboto */
+/* .logo-area {
+    font-family: 'Montserrat', sans-serif; 
     font-weight: 800;
     font-size: 28px;
     color: #1F1F25;
@@ -16,15 +16,64 @@
     padding: 10px 20px;
     border-radius: 8px;
     color: #E08CDE;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: 0.5s all ease-in-out;
+  } */
+  
+  .logo-area {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
   }
   
-  .logo-area:hover {
-    transform: scale(1.05);
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+  .logo-area img {
+    height: 60px;
+    max-width: 100%;
+    display: block;
+    transition: height 0.3s ease;
   }
   
+  /* Center logo on medium devices and below */
+  @media (max-width: 991px) {
+    .logo-area {
+      justify-content: center;
+      width: 100%;
+      text-align: center;
+    }
+  
+    .logo-area img {
+      height: 60px;
+    }
+  }
+  
+  /* Smaller devices */
+  @media (max-width: 768px) {
+    .logo-area img {
+      height: 50px;
+    }
+  }
+  
+  /* Extra small screens like phones */
+  @media (max-width: 480px) {
+    .logo-area img {
+      height: 40px;
+    }
+  }
+  
+  @media (max-width: 320px) {
+    .logo-area img {
+      height: 50px;
+    }
+  }
+    
 
+  .dropdown-menu {
+    border-radius: 10px;
+    padding: 10px;
+    border: none;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    min-width: 200px;
+    animation: fadeInDropdown 0.3s ease;
+  }
   /* Hamburger */
   #mobile-sidebar {
     transition: all 0.3s ease;

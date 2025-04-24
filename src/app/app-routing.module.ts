@@ -13,6 +13,7 @@ import { FaqComponent } from './pages/about/faq/faq.component';
 import { BlogComponent } from './pages/about/blog/blog.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { DashboardComponent } from './pages/contact/dashboard/dashboard.component';
+import { AboutComponent } from './pages/about/about/about.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -29,6 +30,7 @@ const routes: Routes = [
   {path: 'solutions/user-acquisition', component: UserAcquisitionComponent},
 
   // About sub links
+  {path: 'about', component: AboutComponent},
   {path: 'about/faq', component: FaqComponent},
   {path: 'about/blog', component: BlogComponent},
 

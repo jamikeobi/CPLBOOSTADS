@@ -24,6 +24,7 @@ import { MonetizeCounterComponent } from './pages/solutions/monetization/monetiz
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { DashboardComponent } from './pages/contact/dashboard/dashboard.component';
+import { AboutComponent } from './pages/about/about/about.component';
 
 
 @NgModule({
@@ -47,7 +48,8 @@ import { DashboardComponent } from './pages/contact/dashboard/dashboard.componen
     PubCounterComponent,
     IndentifyCounterComponent,
     MonetizeCounterComponent,
-    DashboardComponent
+    DashboardComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,
